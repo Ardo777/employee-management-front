@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {UserService} from './services/user.service';
+import {AuthGuard} from "./guards/auth-guard";
+
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'employee-management';
+
+  constructor(private userService: UserService) { }
+
+  isLoggedIn() {
+   return  this.userService.isLoggedIn();
+  }
+
+  logout() {
+    this.userService.logout();
+  }
 }

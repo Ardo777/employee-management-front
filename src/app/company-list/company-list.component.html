@@ -1,0 +1,38 @@
+<!-- company-list.component.html -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="text-center mb-4">
+        <h2 class="text-primary">Company List</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4" *ngFor="let company of companies">
+          <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title">{{ company.name }}</h5>
+            </div>
+            <div class="card-body">
+              <p><strong>Address:</strong> {{ company.address }}</p>
+              <p><strong>Email:</strong> {{ company.email }}</p>
+              <p><strong>Phone:</strong> {{ company.phone }}</p>
+              <button (click)="viewEmployeesByCompany(company)"  class="btn btn-info mt-2">
+                Employees
+              </button>
+              @if (isLoggedIn()) {
+                <button (click)="editCompany(company.id)" style="margin-left: 10px" class="btn btn-warning mt-2">Update</button>
+                <button (click)="delete(company.id)" style="margin-left: 10px" class="btn btn-danger mt-2">Delete
+                </button>
+                <a [routerLink]="['/company-details', company.id]" class="btn btn-secondary mt-2">More</a>
+              }
+            </div>
+          </div>
+        </div>
+        <ng-template #notFound>
+          <div class="no-companies-message">
+            No Companies Found!
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

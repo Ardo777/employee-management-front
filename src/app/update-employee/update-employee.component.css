@@ -1,0 +1,15 @@
+#currentPicture {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 100px;
+}
+
+.employee-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  padding: 5px;
+}
+

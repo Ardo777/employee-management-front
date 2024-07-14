@@ -1,0 +1,60 @@
+/* companies.component.css */
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.form-control-static {
+  font-size: 1rem;
+}
+
+a.btn {
+  width: 100%;
+}
+
+.container {
+  margin-top: 5rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.card-body p {
+  margin: 0;
+}
+
+.card-body .btn {
+  margin-top: 0.5rem;
+}
+
+.no-companies-message {
+  padding: 20px;
+  margin: 20px;
+  border-width: 2px;
+  border-color: #bfdbfe;
+  color: #3b82f6;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f0f9ff;
+}

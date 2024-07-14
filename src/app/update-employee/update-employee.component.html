@@ -1,0 +1,58 @@
+<div class="col-md-8 offset-md-3">
+  <h3>Update Employee</h3>
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" id="name"
+             [(ngModel)]="employee.name" name="name">
+
+
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label>Surname</label>
+      <input type="text" class="form-control" id="surname"
+             [(ngModel)]="employee.surname" name="surname">
+
+
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label>Salary</label>
+      <input type="text" class="form-control" id="salary"
+             [(ngModel)]="employee.salary" name="salary">
+
+
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label class="form-label">Current Picture</label>
+      <div *ngIf="employee.imageUrl">
+        <img [src]="employee.imageUrl" class="img-thumbnail employee-photo" style="max-width: 200px; max-height: 200px;"
+             alt="Employee Photo">
+      </div>
+      <div *ngIf="!employee.imageUrl">
+        <p>No current picture available</p>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="picture" class="form-label">Picture</label>
+      <input type="file" class="form-control" id="picture" (change)="onFileSelected($event)" accept="image/*" required>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="company" class="form-label">Company</label>
+      <select class="form-control" id="company" [(ngModel)]="selectedCompanyId" name="company" required>
+        <option *ngFor="let company of companies" [ngValue]="company.id">{{ company.name }}</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

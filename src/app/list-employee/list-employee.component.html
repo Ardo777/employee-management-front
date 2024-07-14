@@ -1,0 +1,45 @@
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Search by Name" [(ngModel)]="keyword"
+           (input)="filterEmployees()">
+  </div>
+</div>
+<br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Photo</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Salary</th>
+    <th>Company</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of filteredEmployees">
+    <td>
+      <img *ngIf="employee.imageUrl" [src]="employee.imageUrl" alt="Employee Photo"
+           style="max-width: 70px; max-height: 70px;">
+      <div *ngIf="!employee.imageUrl">No Photo</div>
+    </td>
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.surname }}</td>
+    <td>{{ employee.salary }}</td>
+    <td>
+      <button (click)="viewCompany(employee.company.id)" class="btn btn-primary">{{ employee.company.name }}</button>
+    </td>
+    <td>
+      <button (click)="viewEmployee(employee.id)" class="btn btn-info" >Details</button>
+      @if (isLoggedIn()){
+      <button (click)="updateEmployee(employee.id)" class="btn btn-warning " style="margin-left: 10px">Update</button>
+      <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+      }
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="alert alert-info" role="alert" *ngIf="filteredEmployees.length === 0">
+  No Results!
+</div>

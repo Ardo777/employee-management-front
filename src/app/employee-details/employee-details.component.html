@@ -1,0 +1,58 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4 class="card-title">Employee Details</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <img *ngIf="employee.imageUrl" [src]="employee.imageUrl" class="img-fluid rounded-circle mb-2"
+                   alt="Employee Photo">
+              <div *ngIf="!employee.imageUrl" class="text-muted">No Photo</div>
+            </div>
+            <div class="col-md-9">
+              <div class="form-group">
+                <label>ID:</label>
+                <p class="form-control-static"><b>{{ employee.id }}</b></p>
+              </div>
+              <div class="form-group">
+                <label>Name:</label>
+                <p class="form-control-static"><b>{{ employee.name }}</b></p>
+              </div>
+              <div class="form-group">
+                <label>Surname:</label>
+                <p class="form-control-static"><b>{{ employee.surname }}</b></p>
+              </div>
+              <div class="form-group">
+                <label>Salary:</label>
+                <p class="form-control-static"><b>{{ employee.salary }}</b></p>
+              </div>
+              <hr>
+              <div class="form-group">
+                <h5 class="card-title">Company Information</h5>
+                <div class="form-group">
+                  <label>Name:</label>
+                  <p class="form-control-static"><b>{{ employee.company.name }}</b></p>
+                </div>
+                <div class="form-group">
+                  <label>Address:</label>
+                  <p class="form-control-static"><b>{{ employee.company.address }}</b></p>
+                </div>
+                <div class="form-group">
+                  <label>Email:</label>
+                  <p class="form-control-static"><b>{{ employee.company.email }}</b></p>
+                </div>
+                <div class="form-group">
+                  <label>Phone:</label>
+                  <p class="form-control-static"><b>{{ employee.company.phone }}</b></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

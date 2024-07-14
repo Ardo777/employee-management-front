@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="text-center mb-4">
+        <h2 class="text-primary">List of Employees in the company {{ company.name }}</h2>
+      </div>
+      <div *ngIf="company">
+        <div class="card shadow-sm mb-3" *ngFor="let employee of employees">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2">
+                <img *ngIf="employee.imageUrl" [src]="employee.imageUrl" alt="{{ employee.name }}'s photo"
+                     class="img-fluid rounded-circle employee-photo">
+                <div *ngIf="!employee.imageUrl" class="text-muted">No Photo</div>
+              </div>
+              <div class="col-md-10">
+                <h5 class="card-title">{{ employee.name }} {{ employee.surname }}</h5>
+                <p><strong>Salary:</strong> {{ employee.salary }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!company">
+        <p class="text-muted">Company not found or data not loaded.</p>
+      </div>
+    </div>
+  </div>
+</div>

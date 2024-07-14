@@ -1,0 +1,33 @@
+/* list-employee.component.css */
+.info {
+  border: 5px double deepskyblue;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 8px;
+  width: 300px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card-header {
+  padding: 10px;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
